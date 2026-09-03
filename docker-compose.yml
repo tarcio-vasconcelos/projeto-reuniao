@@ -1,0 +1,24 @@
+services:
+  # ----------------------------------------------------------------
+  # Backend Django
+  # ----------------------------------------------------------------
+  backend:
+    build:
+      context: ./reuniao
+      dockerfile: Dockerfile
+    container_name: django_backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=${DATABASE_URL:-postgres://postgres:postgres@db:5432/postgres}
+    volumes:
+      - ./reuniao:/app
+    ports:
+      - "8000:8000"
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+
+volumes:
+  db_data:
