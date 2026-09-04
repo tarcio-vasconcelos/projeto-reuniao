@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'rest_framework',
     #Apps
     'login',
+    'home',
 ]
 
 SITE_ID = 1
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    'reuniao.middleware.ExigirLoginMiddleware',
 ]
 
 ROOT_URLCONF = 'reuniao.urls'
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'reuniao.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,13 +131,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.1/howto/static-files/
-
-STATIC_URL = 'static/'
-
-
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
@@ -144,3 +139,21 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+#Pular login e logout
+
+ACCOUNT_LOGOUT_ON_GET = True
+
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
+SOCIALACCOUNT_AUTO_SIGNUP = False
+
+ACCOUNT_SIGNUP_ENABLED = False
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/6.1/howto/static-files/
+
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>{% block title %}Projeto-reuniao{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+<header class="header">
+  <img src="{{ foto_google }}" alt="Foto de perfil" class="foto-perfil">
+    <a href="#" class="logo">Projeto reunião</a>
+
+    <nav aria-label="Navegação Principal">
+      <ul class="nav-list">
+        <li><a href="#">Painel</a></li>
+        <li><a href="#">Minha disponibilidade</a></li>
+        <li><a href="#">Usuários </a></li>
+        <li><a href="#">Relatórios</a></li>
+      </ul>
+    </nav>
+
+    <a href="{% url 'account_logout' %}" class="cta-button">Sair</a>
+  </header>
+      {% block content %}
+      {% endblock %}
+  </body>
+</html>

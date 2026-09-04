@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h1>Bem-vindo(a), {{ user.first_name|default:user.username }}</h1>
+
+<p>DEBUG: {{ foto_google }}</p>
+
+{% endblock  %}
