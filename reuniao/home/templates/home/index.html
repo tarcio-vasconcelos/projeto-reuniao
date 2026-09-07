@@ -5,8 +5,9 @@
 
 {% block content %}
 
-<h1>Bem-vindo(a), {{ user.first_name|default:user.username }}</h1>
-
-<p>DEBUG: {{ foto_google }}</p>
+<div class="corpo">
+    <h1>Bem-vindo(a), {{ user.first_name|default:user.username }}</h1>
+    <p>Visão consolidada de reuniões prometidas e recorrentes. Filtre por período, status ou setor externo.</p>
+</div>
 
 {% endblock  %}

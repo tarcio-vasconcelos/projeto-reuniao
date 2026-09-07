@@ -2,6 +2,8 @@ from pathlib import Path
 import dj_database_url
 from decouple import config
 import requests
+from django.urls import reverse_lazy
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,6 +36,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     #Extra
     'rest_framework',
+    'reuniao.apps.ReuniaoConfig',
     #Apps
     'login',
     'home',
@@ -46,7 +49,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,6 +119,7 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
         'AUTH_PARAMS': {
             'access_type': 'online',
+            'prompt': 'select_account'
         }
     }
 }

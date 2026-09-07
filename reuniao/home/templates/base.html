@@ -9,9 +9,10 @@
 </head>
 <body>
 <header class="header">
-  <img src="{{ foto_google }}" alt="Foto de perfil" class="foto-perfil">
+  <div class="logo_barra">
+    <img src="{{ foto }}" alt="Foto de perfil" class="foto-perfil">
     <a href="#" class="logo">Projeto reunião</a>
-
+  </div>
     <nav aria-label="Navegação Principal">
       <ul class="nav-list">
         <li><a href="#">Painel</a></li>
@@ -20,7 +21,6 @@
         <li><a href="#">Relatórios</a></li>
       </ul>
     </nav>
-
     <a href="{% url 'account_logout' %}" class="cta-button">Sair</a>
   </header>
       {% block content %}

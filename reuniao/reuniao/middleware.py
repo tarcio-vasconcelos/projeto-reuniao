@@ -14,6 +14,7 @@ class ExigirLoginMiddleware:
             '/accounts/google/login/',
             '/accounts/google/login/callback/',
             '/admin/login/',
+            reverse('login'),
         ]
 
         # Libera arquivos estáticos e admin (opcional, ajuste como quiser)
@@ -26,8 +27,7 @@ class ExigirLoginMiddleware:
             and path not in rotas_liberadas
             and not any(path.startswith(p) for p in caminhos_liberados)
         )
-
         if precisa_bloquear:
-            return redirect('account_login')
+            return redirect('login')
 
         return self.get_response(request)

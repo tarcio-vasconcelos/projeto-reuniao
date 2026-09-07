@@ -17,6 +17,17 @@
   z-index: 1000;
 }
 
+.logo_barra{
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
@@ -73,4 +84,9 @@
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.corpo {
+  padding-left: 1rem;
+  font-family: "Times New Roman", Times, serif;
 }

@@ -1,6 +1,7 @@
 body {
   background-color: #242938; /* Fundo escuro como o da imagem */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -38,4 +39,61 @@ body {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+.messages li {
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease;
+}
+
+.messages li.error {
+    background-color: #fdecea;
+    color: #b91c1c;
+    border-left: 4px solid #ea4335;
+}
+
+.messages li.success {
+    background-color: #e6f4ea;
+    color: #1e7e34;
+    border-left: 4px solid #34a853;
+}
+
+.messages li.warning {
+    background-color: #fef7e0;
+    color: #92620a;
+    border-left: 4px solid #fbbc05;
+}
+
+.messages li.info {
+    background-color: #e8f0fe;
+    color: #1a56db;
+    border-left: 4px solid #4285f4;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
