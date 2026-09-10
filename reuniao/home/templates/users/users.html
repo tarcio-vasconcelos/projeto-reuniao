@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sugestoes{% endblock %}
+
+{% block content %}
+
+<div class="corpo">
+    <h1>Usuários</h1>
+    <p>Gerencie quem pode acessar o sistema e gere o link para que outros setores sugiram horários.</p>
+    <h2>Dicionário de Usuários</h2>
+    <div class="formulario">
+        <form>
+            <input type="text" class="buscar" >
+            <select>
+                <option>Escritorio de Processos</option>
+                <option>Externo</option>
+            </select>
+            <input type="submit" class="btn btn-success" placeholder="Adcionar">
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Papel/<br>HORA</th>
+            <th>Peso</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock  %}

@@ -15,3 +15,10 @@ def sugestoes(request):
         'usuario': request.user,
         'foto': foto
 })
+
+def users(request):
+    foto = get_foto_google(request.user)
+    return render(request,"users/users.html",{
+        'usuario': request.user,
+        'foto': foto
+})

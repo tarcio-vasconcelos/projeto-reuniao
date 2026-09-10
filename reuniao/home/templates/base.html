@@ -13,14 +13,14 @@
 <header class="header">
   <div class="logo_barra">
     <img src="{{ foto }}" alt="Foto de perfil" class="foto-perfil">
-    <a href="#" class="logo">Projeto reunião</a>
+    <a href="{% url 'home:home' %}" class="logo">Projeto reunião</a>
   </div>
     <nav aria-label="Navegação Principal">
       <ul class="nav-list">
         <li><a href="{% url 'home:home' %}">Painel</a></li>
         <li><a href="{% url 'home:sugestoes' %}">Sugestões</a></li>
         <li><a href="#">Minha disponibilidade</a></li>
-        <li><a href="#">Usuários </a></li>
+        <li><a href="{% url 'home:usuarios' %}">Usuários </a></li>
       </ul>
     </nav>
     <a href="{% url 'account_logout' %}" class="cta-button">Sair</a>

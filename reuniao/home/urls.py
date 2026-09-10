@@ -5,5 +5,6 @@ app_name = 'home'
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('/sugestoes', views.sugestoes, name='sugestoes')
+    path('sugestoes', views.sugestoes, name='sugestoes'),
+    path('users', views.users, name='usuarios')
 ]
