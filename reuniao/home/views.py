@@ -8,3 +8,10 @@ def home(request):
         'usuario': request.user,
         'foto': foto
 })
+
+def sugestoes(request):
+    foto = get_foto_google(request.user)
+    return render(request,"sugestoes/sugestoes.html",{
+        'usuario': request.user,
+        'foto': foto
+})

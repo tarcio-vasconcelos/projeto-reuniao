@@ -8,6 +8,53 @@
 <div class="corpo">
     <h1>Bem-vindo(a), {{ user.first_name|default:user.username }}</h1>
     <p>Visão consolidada de reuniões prometidas e recorrentes. Filtre por período, status ou setor externo.</p>
+
+    <div class="exportarBotoes">
+        <button class="btn btn-secondary botao">↓ Exportar CSV</button>
+        <button class="btn btn-secondary botao">↓ Exportar PDF</button>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="label">Reuniões este Mês</div>
+            <div class="valor">18</div>
+        </div>
+        <div class="card">
+            <div class="label">Sugestões Pendentes</div>
+            <div class="valor">6</div>
+        </div>
+        <div class="card">
+            <div class="label">Taxa de Confirmação</div>
+            <div class="valor">82%</div>
+        </div>
+        <div class="card">
+            <div class="label">Recorrentes</div>
+            <div class="valor">5</div>
+        </div>
+    </div>
+    <div class="botoes">
+        <button class="btn btn-outline-secondary">Período</button>
+        <button class="btn btn-outline-secondary">Status</button>
+        <button class="btn btn-outline-secondary">Usuário externo</button>
+    </div>
+    <div class="filtro">
+    <table>
+        <thead>
+            <tr>
+            <th>REUNIÃO</th>
+            <th>SETOR</th>
+            <th>DATA/<br>HORA</th>
+            <th>TIPO</th>
+            <th>STATUS</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <button class="btn btn-primary filterBotoes">Ver mais</button>
+    </div>
 </div>
+
 
 {% endblock  %}

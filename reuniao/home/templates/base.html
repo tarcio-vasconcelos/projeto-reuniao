@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>{% block title %}Projeto-reuniao{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 </head>
 <body>
 <header class="header">
@@ -15,15 +17,16 @@
   </div>
     <nav aria-label="Navegação Principal">
       <ul class="nav-list">
-        <li><a href="#">Painel</a></li>
+        <li><a href="{% url 'home:home' %}">Painel</a></li>
+        <li><a href="{% url 'home:sugestoes' %}">Sugestões</a></li>
         <li><a href="#">Minha disponibilidade</a></li>
         <li><a href="#">Usuários </a></li>
-        <li><a href="#">Relatórios</a></li>
       </ul>
     </nav>
     <a href="{% url 'account_logout' %}" class="cta-button">Sair</a>
   </header>
       {% block content %}
       {% endblock %}
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
