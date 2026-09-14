@@ -1,16 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Sugestoes{% endblock %}
+{% block title %}user{% endblock %}
 
 {% block content %}
-
 <div class="corpo">
     <h1>Usuários</h1>
     <p>Gerencie quem pode acessar o sistema e gere o link para que outros setores sugiram horários.</p>
     <h2>Dicionário de Usuários</h2>
     <div class="formulario">
-        <form>
+        <form method="get">
             <input type="text" class="buscar" >
             <select>
                 <option>Escritorio de Processos</option>
@@ -19,17 +18,30 @@
             <input type="submit" class="btn btn-success" placeholder="Adcionar">
         </form>
     </div>
-    <table>
+<table>
         <thead>
             <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Papel/<br>HORA</th>
-            <th>Peso</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Papel</th>
+                <th>Peso</th>
             </tr>
         </thead>
         <tbody>
-            
+            {% for user in usuarios %}
+            <tr>
+                <td>{{ user.usuario }}</td>
+                <td>{{ user.mail }}</td>
+                <td>{{ user.area }} - {{ user.setor }} - {{ user.get_papel_display }}</td>
+                <td>{{ user.peso }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">
+                    <h1>Nenhum usuário cadastrado!</h1>
+                </td>
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>

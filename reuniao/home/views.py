@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .utils import get_foto_google
+from .models import Usuarios
 
 # Create your views here.
 def home(request):
@@ -18,7 +19,10 @@ def sugestoes(request):
 
 def users(request):
     foto = get_foto_google(request.user)
-    return render(request,"users/users.html",{
+    usuarios = Usuarios.objects.all()
+    contexto = {
+        'usuarios': usuarios,
         'usuario': request.user,
-        'foto': foto
-})
+        'foto': foto,
+    }
+    return render(request, "users/users.html", contexto)
