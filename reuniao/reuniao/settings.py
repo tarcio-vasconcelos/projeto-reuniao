@@ -153,6 +153,8 @@ SOCIALACCOUNT_AUTO_SIGNUP = False
 
 ACCOUNT_SIGNUP_ENABLED = False
 
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
